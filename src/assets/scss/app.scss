@@ -80,3 +80,9 @@
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
+
+.expand {
+    transition: 500ms all ease;
+    transform: scale(1.1);
+}
+
