@@ -7,7 +7,9 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
+    global $post;
+    $post_slug = $post->post_name;
+    // var_dump($post_slug);
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
@@ -49,3 +51,5 @@
 		</nav>
 
 	</header>
+    <div id="barba-wrapper">
+         <div class="barba-container" data-namespace="<?php echo $post_slug; ?>">
