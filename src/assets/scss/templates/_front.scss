@@ -3,6 +3,7 @@
   .marketing {
     @include xy-grid-container(55rem);
     @include xy-grid;
+    opacity: 0;
   }
 
   @include breakpoint(small) {

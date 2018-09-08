@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
-import Barba from 'barba.js'
+import Barba from 'barba.js';
+import FrontPage from './barbaViews/frontpage';
+
 window.$ = $;
 
 import Foundation from 'foundation-sites';
@@ -75,30 +77,10 @@ Barba.Pjax.getTransition = function () {
     return FadeTransition;
 };
 
-var Homepage = Barba.BaseView.extend({
-    namespace: 'frontpage',
-  
-    onEnter: function () {
-        // The new Container is ready and attached to the DOM.
-        
-     
-    },
-    onEnterCompleted: function () {
-        $('.marketing').addClass('expand')
-        // The Transition has just finished.
-    },
-    onLeave: function () {
-        $('.marketing').removeClass('expand')
-       
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function () {
-        // The Container has just been removed from the DOM.
-    }
-});
+var Homepage = Barba.BaseView.extend(FrontPage);
 
 // Don't forget to init the view!
 Homepage.init();
 
-Barba.Pjax.start(); 
+Barba.Pjax.start();
 Barba.Prefetch.init();
