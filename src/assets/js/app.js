@@ -78,14 +78,14 @@ Barba.Pjax.getTransition = function () {
 };
 
 Barba.Dispatcher.on('newPageReady', function (newStatus, oldStatus, container, html) {
-  // console.log(html)
+  /** update body classes */
+  const barbaDataBody = $(html).find('.barba-container').get(0).getAttribute('data-body')
+  $('body').attr('class', barbaDataBody)
+  // console.log(barbaDataBody)
+  /** Update wp curretn menu item */
   const navs = $(html).find('.menu-item') // New ones
-  // $('.menu-item').each((i, el) => $(el).html($(navs[i]).html())) // Replace each old ones
-
   $('.menu-item').each(function (index) {
     const newClasses = $(navs[index]).get(0).classList.value;
-    // console.log($(this))
-    // $(this).attr('class', '')
     $(this).attr('class', newClasses);
   })
 })
