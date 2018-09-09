@@ -77,6 +77,19 @@ Barba.Pjax.getTransition = function () {
     return FadeTransition;
 };
 
+Barba.Dispatcher.on('newPageReady', function (newStatus, oldStatus, container, html) {
+  // console.log(html)
+  const navs = $(html).find('.menu-item') // New ones
+  // $('.menu-item').each((i, el) => $(el).html($(navs[i]).html())) // Replace each old ones
+
+  $('.menu-item').each(function (index) {
+    const newClasses = $(navs[index]).get(0).classList.value;
+    // console.log($(this))
+    // $(this).attr('class', '')
+    $(this).attr('class', newClasses);
+  })
+})
+
 var Homepage = Barba.BaseView.extend(FrontPage);
 
 // Don't forget to init the view!

@@ -52,4 +52,7 @@
 
 	</header>
     <div id="barba-wrapper">
-         <div class="barba-container" data-namespace="<?php echo $post_slug; ?>">
+				<?php $body_classes = get_body_class();
+							$str_body_classes = implode(' ', $body_classes);
+				?>
+         <div class="barba-container" data-namespace="<?php echo $post_slug; ?>" data-body="<?php echo $str_body_classes; ?>">
